@@ -18,3 +18,4 @@ LICENSE
 **/*.hbs
 coverage
 themes/gatsby-theme-minimal-blog/src/texts/hero.mdx
+*/*

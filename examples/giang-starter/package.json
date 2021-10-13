@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "giang-starter",
+  "description": "Stub description for giang-starter",
+  "version": "0.0.1",
+  "author": "LekoArts <hello@lekoarts.de>",
+  "license": "0BSD",
+  "starter-name": "Giang Startẻ ",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
+    "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@lekoarts/gatsby-theme-giang-starter": "*",
+    "gatsby": "^3.0.0",
+    "gatsby-plugin-google-analytics": "^^3.0.0",
+    "gatsby-plugin-manifest": "^3.0.0",
+    "gatsby-plugin-netlify": "^3.0.0",
+    "gatsby-plugin-offline": "^3.0.0",
+    "react": "^17.1.0",
+    "react-dom": "^17.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.3.0"
+  }
+}
