@@ -171,6 +171,7 @@ exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDig
 const projectsTemplate = require.resolve(`./src/templates/projects-query.tsx`)
 const projectTemplate = require.resolve(`./src/templates/project-query.tsx`)
 const pageTemplate = require.resolve(`./src/templates/page-query.tsx`)
+const viewAllprojectsTemplate = require.resolve(`./src/templates/view-all-projects-query.tsx`)
 
 exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
   const { createPage } = actions
@@ -180,6 +181,11 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
   createPage({
     path: basePath,
     component: projectsTemplate,
+  })
+
+  createPage({
+    path: `${basePath}view-all-projects`,
+    component: viewAllprojectsTemplate,
   })
 
   const result = await graphql(`
