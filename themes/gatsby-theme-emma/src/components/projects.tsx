@@ -2,6 +2,7 @@
 import { jsx, Container, Themed } from "theme-ui"
 import { useTrail } from "react-spring"
 import { IGatsbyImageData } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 import Layout from "./layout"
 import ProjectItem from "./project-item"
 
@@ -56,6 +57,9 @@ const Projects = ({ projects }: ProjectsProps) => {
             </Themed.a>
             .
           </Themed.p>
+          <p>
+            Check out my <Link to="/viewAllProjects">blog</Link>!
+          </p>
         </Container>
       </Layout>
     )
@@ -72,6 +76,7 @@ const Projects = ({ projects }: ProjectsProps) => {
       {trail.map((style, index) => (
         <ProjectItem style={style} eager={index === 0} node={projects[index]} key={projects[index].slug} />
       ))}
+
     </Layout>
   )
 }

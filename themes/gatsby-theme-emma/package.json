@@ -15,7 +15,7 @@
     "clean": "gatsby clean"
   },
   "peerDependencies": {
-    "gatsby": "^3.0.0",
+    "gatsby": "^3.14.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

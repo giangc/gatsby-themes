@@ -14,8 +14,6 @@ const mdxResolverPassthrough = (fieldName) => async (source, args, context, info
   return result
 }
 
-// Create general interfaces that you could can use to leverage other data sources
-// The core theme sets up MDX as a type for the general interface
 exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
   const { createTypes, createFieldExtension } = actions
 
@@ -47,118 +45,37 @@ exports.createSchemaCustomization = ({ actions, schema }, themeOptions) => {
       }
     },
   })
-
+  // client
+  // domain
+  // brief
   createTypes(`
     interface Project implements Node {
       id: ID!
-      title: String!
+      client: String!
+      domain: String!
+      brief: String!
       slug: String! @slugify
-      date: Date! @dateformat
-      areas: [String!]!
       cover: File! @fileByRelativePath
-      excerpt(pruneLength: Int = 160): String!
-      body: String!
     }
 
     type MdxProject implements Node & Project {
       title: String!
       slug: String! @slugify
-      date: Date! @dateformat
-      areas: [String!]!
-      cover: File! @fileByRelativePath
-      excerpt(pruneLength: Int = 140): String! @mdxpassthrough(fieldName: "excerpt")
+      client: String!
+      domain: String!
+      brief: String!
       body: String! @mdxpassthrough(fieldName: "body")
+      cover: File! @fileByRelativePath
     }
-    
   `)
 }
 
-exports.onCreateNode = ({ node, actions, getNode, createNodeId, createContentDigest }, themeOptions) => {
-  const { createNode, createParentChildLink } = actions
-
-  const { projectsPath } = withDefaults(themeOptions)
-
-  // Make sure that it's an MDX node
-  if (node.internal.type !== `Mdx`) {
-    return
-  }
-
-  // Create a source field
-  // And grab the sourceInstanceName to differentiate the different sources
-  // In this case "projectsPath" and "pagesPath"
-  const fileNode = getNode(node.parent)
-  const source = fileNode.sourceInstanceName
-
-  // Check for "projects" and create the "Project" type
-  if (node.internal.type === `Mdx` && source === projectsPath) {
-    const fieldData = {
-      slug: node.frontmatter.slug ? node.frontmatter.slug : undefined,
-      title: node.frontmatter.title,
-      cover: node.frontmatter.cover,
-      date: node.frontmatter.date,
-      areas: node.frontmatter.areas,
-    }
-
-    const mdxProjectId = createNodeId(`${node.id} >>> MdxProject`)
-
-    createNode({
-      ...fieldData,
-      // Required fields
-      id: mdxProjectId,
-      parent: node.id,
-      children: [],
-      internal: {
-        type: `MdxProject`,
-        contentDigest: createContentDigest(fieldData),
-        content: JSON.stringify(fieldData),
-        description: `Mdx implementation of the Project interface`,
-      },
-    })
-
-    createParentChildLink({ parent: node, child: getNode(mdxProjectId) })
-  }
-}
-
-exports.sourceNodes = (
-  { actions, createContentDigest },
-  {
-    name = `LekoArts`,
-    location = `Germany`,
-    socialMedia = [
-      { title: `Twitter`, href: `https://twitter.com/lekoarts_de` },
-      { title: `Homepage`, href: `https://www.lekoarts.de?utm_source=emilia&utm_medium=Theme` },
-    ],
-    showThemeAuthor = true,
-    assetsPath = `content/assets`,
-  }
-) => {
-  const { createNode } = actions
-
-  const emiliaConfig = {
-    name,
-    location,
-    socialMedia,
-    showThemeAuthor,
-    assetsPath,
-  }
-
-  createNode({
-    ...emiliaConfig,
-    id: `@lekoarts/gatsby-theme-emilia-core-config`,
-    parent: null,
-    children: [],
-    internal: {
-      type: `EmiliaConfig`,
-      contentDigest: createContentDigest(emiliaConfig),
-      content: JSON.stringify(emiliaConfig),
-      description: `Options for @lekoarts/gatsby-theme-emilia-core`,
-    },
-  })
-}
-
 // These template are only data-fetching wrappers that import components
-const projectsTemplate = require.resolve(`./src/templates/projects-query.tsx`)
-const projectTemplate = require.resolve(`./src/templates/project-query.tsx`)
+const homePageTemplate = require.resolve(`./src/templates/homepage-query.tsx`)
+
+exports.onCreateNodes = async({actions}) => {
+
+};
 
 exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
   const { createPage } = actions
@@ -167,55 +84,17 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
 
   createPage({
     path: basePath,
-    component: projectsTemplate,
+    component: homePageTemplate,
   })
 
-  const result = await graphql(`
-    query {
-      allProject(sort: { fields: date, order: DESC }) {
-        nodes {
-          slug
-          ... on MdxProject {
-            parent {
-              ... on Mdx {
-                fileAbsolutePath
-              }
-            }
-          }
-          title
-          cover {
-            childImageSharp {
-              gatsbyImageData(width: 770, quality: 90, aspectRatio: 1.777778)
-            }
-          }
-        }
-      }
-    }
-  `)
 
-  if (result.errors) {
-    reporter.panicOnBuild(`There was an error loading your projects or pages`, result.errors)
-    return
-  }
-
-  const projects = result.data.allProject.nodes
-
-  projects.forEach((project, index) => {
-    const { fileAbsolutePath } = project.parent
-
-    const next = index === 0 ? null : projects[index - 1]
-    const prev = index === projects.length - 1 ? null : projects[index + 1]
-
-    createPage({
-      path: project.slug,
-      component: projectTemplate,
-      context: {
-        slug: project.slug,
-        absolutePathRegex: `/^${path.dirname(fileAbsolutePath)}/`,
-        prev,
-        next,
-        formatString,
-      },
-    })
+  createPage({
+    path: project.slug,
+    component: homePageTemplate,
+    context: {
+      slug: project.slug,
+      absolutePathRegex: `/^${path.dirname(fileAbsolutePath)}/`,
+      formatString,
+    },
   })
 }

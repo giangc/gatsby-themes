@@ -3,7 +3,7 @@ import HomepageComponent from "../components/homepage";
 
 export const query = graphql`
   query {
-    allProject(sort: { fields: date, order: DESC }) {
+    allProject(sort: { order: DESC }) {
       nodes {
         client
         domain
