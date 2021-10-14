@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "emma",
+  "name": "giang",
   "description": "Minimalistic portfolio with full-width grid, page transitions, support for additional MDX pages, and a focus on large images",
   "version": "0.3.10",
   "author": "LekoArts <hello@lekoarts.de>",
@@ -16,7 +16,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@giangnguyencrystal1/gatsby-theme-emma-giang-custom": "^1.0.4",
+    "@giangnguyencrystal1/gatsby-theme-emma-giang-custom": "^1.0.3",
     "gatsby": "^3.6.1",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
     "gatsby-plugin-google-analytics": "^3.6.0",

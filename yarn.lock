@@ -2184,6 +2184,122 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
+"@lekoarts/gatsby-theme-emilia-core@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emilia-core/-/gatsby-theme-emilia-core-2.0.6.tgz#a7deed7a83bc56e529d8131964975b96c4b97fed"
+  integrity sha512-wA6LeWl76XDMMlToVPe3bgLTlvCxD2Lof/aS+J1PFpKeZeGXNn2iIkETBEHPOip/j9UlBG1kakwcpeSfv4r4HA==
+  dependencies:
+    "@mdx-js/mdx" "^1.6.22"
+    "@mdx-js/react" "^1.6.22"
+    gatsby-plugin-mdx "^2.14.0"
+    gatsby-plugin-sharp "^3.14.0"
+    gatsby-source-filesystem "^3.14.0"
+    gatsby-transformer-sharp "^3.14.0"
+    lodash.kebabcase "^4.1.1"
+
+"@lekoarts/gatsby-theme-emilia@^2.0.0":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-emilia/-/gatsby-theme-emilia-2.0.6.tgz#6b3fecb05d6cf389090e23e6b1b781e5268e717f"
+  integrity sha512-q7UMUheNXLJfUiw58IRmd4637ubP+U+qK7TLm53Wh2JdkwB+iH+QjBvfx4sGiO5iftpzYF61BUlBitpqzmd9Iw==
+  dependencies:
+    "@lekoarts/gatsby-theme-emilia-core" "^2.0.6"
+    "@theme-ui/presets" "^0.9.1"
+    gatsby-plugin-image "^1.14.0"
+    gatsby-plugin-react-helmet "^4.14.0"
+    gatsby-plugin-theme-ui "^0.9.1"
+    polished "^4.1.3"
+    react-helmet "^6.1.0"
+    react-spring "^9.2.5"
+    theme-ui "^0.9.1"
+
+"@lekoarts/gatsby-theme-jodie-core@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-jodie-core/-/gatsby-theme-jodie-core-2.0.6.tgz#eb24bbfe3fa6f030e770b7dfe60be467a5f0ddcc"
+  integrity sha512-gQDsCOGzfG8ZO6oTHUUyO15sVChrxa7HfwyJi2JkviKe3u2LD1eZBb2W+d1P3OAyRts5yvYRCxWk1ruNzxAk+Q==
+  dependencies:
+    "@mdx-js/mdx" "^1.6.22"
+    "@mdx-js/react" "^1.6.22"
+    gatsby-plugin-mdx "^2.14.0"
+    gatsby-plugin-sharp "^3.14.0"
+    gatsby-source-filesystem "^3.14.0"
+    gatsby-transformer-sharp "^3.14.0"
+    lodash.kebabcase "^4.1.1"
+
+"@lekoarts/gatsby-theme-jodie@^2.0.0":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-jodie/-/gatsby-theme-jodie-2.0.6.tgz#1b2fd3f454c5b09f5ac20fb610477a9339e07e43"
+  integrity sha512-+oRsVUSx1LfttzJEiVWWudv2nEX7WAFEcpLaI/j6kN6Av449cax8V76A5rwBXuY1dEoaSpDBQPMdp1nYpouLjQ==
+  dependencies:
+    "@lekoarts/gatsby-theme-jodie-core" "^2.0.6"
+    "@theme-ui/presets" "^0.9.1"
+    "@theme-ui/prism" "^0.9.1"
+    gatsby-plugin-image "^1.14.0"
+    gatsby-plugin-react-helmet "^4.14.0"
+    gatsby-plugin-theme-ui "^0.9.1"
+    polished "^4.1.3"
+    react-helmet "^6.1.0"
+    theme-ui "^0.9.1"
+
+"@lekoarts/gatsby-theme-minimal-blog-core@^3.1.3":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog-core/-/gatsby-theme-minimal-blog-core-3.1.3.tgz#09c7528299754a90e3823d42cb8315869017bb9f"
+  integrity sha512-WfuZPjDCSZsrq+SM2H5pV3j1uCD0OJPEnZT10sIR0Pi/7xqrbqEY7fcMOk0M3ZOtEM398i1MD8Q3D977qEqa/w==
+  dependencies:
+    "@mdx-js/mdx" "^1.6.22"
+    "@mdx-js/react" "^1.6.22"
+    gatsby-plugin-mdx "^2.14.0"
+    gatsby-plugin-sharp "^3.14.0"
+    gatsby-remark-images "^5.11.0"
+    gatsby-source-filesystem "^3.14.0"
+    gatsby-transformer-sharp "^3.14.0"
+    lodash.kebabcase "^4.1.1"
+
+"@lekoarts/gatsby-theme-minimal-blog@^3.0.0":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-minimal-blog/-/gatsby-theme-minimal-blog-3.1.3.tgz#be89cccc977e51c95c57220afbdaeebc1fce31c3"
+  integrity sha512-NH6gaofZ/2DnEzX7qGrdGbCI5FJX4Wu0OewbfknzPqreYVQArlXX3g/+TEh2ozx0t2nUA07WjkpzOu9axTVZ+g==
+  dependencies:
+    "@lekoarts/gatsby-theme-minimal-blog-core" "^3.1.3"
+    "@loadable/component" "^5.15.0"
+    "@theme-ui/color" "^0.9.1"
+    "@theme-ui/presets" "^0.9.1"
+    gatsby-plugin-catch-links "^3.14.0"
+    gatsby-plugin-react-helmet "^4.14.0"
+    gatsby-plugin-theme-ui "^0.9.1"
+    lodash.kebabcase "^4.1.1"
+    mdx-utils "^0.2.0"
+    prism-react-renderer "^1.2.1"
+    react-helmet "^6.1.0"
+    react-live "^2.3.0"
+    theme-ui "^0.9.1"
+
+"@lekoarts/gatsby-theme-specimens@^3.0.0", "@lekoarts/gatsby-theme-specimens@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-specimens/-/gatsby-theme-specimens-3.0.2.tgz#d8fb7a20031b3c944ea0dac6d1d7b776e46ada44"
+  integrity sha512-Hv2RHBR7IwctXwUjMiN/UhLJARFQLVhDyv+A09Z4vjXZigZ2sfMKZJOIFc/Yn6U8zFr3S0HKIu53Qma+keT/Nw==
+  dependencies:
+    "@styled-system/css" "^5.1.5"
+    chroma-js "^2.1.2"
+    polished "^4.1.3"
+
+"@lekoarts/gatsby-theme-status-dashboard@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-status-dashboard/-/gatsby-theme-status-dashboard-2.0.1.tgz#00e97fd9fb475b53b10ffc63e43b3373de7f4e88"
+  integrity sha512-HiKQ2GeHYvEo7H837njgUg1Zf6fgKxNO+o9JMRAxFJFLcEe8ogrlNGCteUFgWzUVo720lKCxu4JssM5OkmkxLg==
+  dependencies:
+    "@theme-ui/presets" "^0.9.1"
+    gatsby-plugin-theme-ui "^0.9.1"
+    gatsby-source-circleci "^1.0.3"
+    gatsby-source-netlify "^1.0.4"
+    theme-ui "^0.9.1"
+
+"@lekoarts/gatsby-theme-styleguide@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@lekoarts/gatsby-theme-styleguide/-/gatsby-theme-styleguide-2.0.1.tgz#139feae91d03a5137c9e0c9e96b0379d33f24a44"
+  integrity sha512-9WNniocqv5TfK0rNWhNQ80qiv0nMIPMm77rRQ+EgAie9R486mjo2OmG3hpoYTkR4A/4PZr1odVR/s2tTVhNCmA==
+  dependencies:
+    "@lekoarts/gatsby-theme-specimens" "^3.0.2"
+
 "@loadable/component@5.13.1":
   version "5.13.1"
   resolved "https://registry.yarnpkg.com/@loadable/component/-/component-5.13.1.tgz#b7650a76f9cc1cccf17f79265dc05b9e62daaaa2"
